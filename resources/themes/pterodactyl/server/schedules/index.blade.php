@@ -19,6 +19,7 @@
 @endsection
 
 <?php 
+    setlocale(LC_TIME, 'tr_TR.UTF-8');
     Carbon::setLocale(config('app.locale'));
 ?>
 
@@ -63,7 +64,7 @@
                                 <td class="middle text-center"><span class="label label-primary">{{ $schedule->tasks_count }}</span></td>
                                 <td class="middle">
                                 @if($schedule->last_run_at)
-                                    {{ Carbon::parse($schedule->last_run_at)->toDayDateTimeString() }}<br /><span class="text-muted small">({{ Carbon::parse($schedule->last_run_at)->diffForHumans() }})</span>
+                                    {{ Carbon::parse($schedule->last_run_at)->formatLocalized('%d %b %Y %a %H:%M:%S') }}<br /><span class="text-muted small">({{ Carbon::parse($schedule->last_run_at)->diffForHumans() }})</span>
                                 @else
                                     <em class="text-muted">@lang('strings.not_run_yet')</em>
                                 @endif
@@ -71,7 +72,7 @@
                                 <td class="middle">
                                     @if($schedule->is_active)
                                         @if($schedule->last_run_at)
-                                            {{ Carbon::parse($schedule->next_run_at)->toDayDateTimeString() }}<br /><span class="text-muted small">({{ Carbon::parse($schedule->next_run_at)->diffForHumans() }})</span>
+                                            {{ Carbon::parse($schedule->next_run_at)->formatLocalized('%d %b %Y %a %H:%M:%S') }}<br /><span class="text-muted small">({{ Carbon::parse($schedule->next_run_at)->diffForHumans() }})</span>
                                         @else
                                             <em class="text-muted">@lang('strings.not_run_yet')</em>
                                         @endif
