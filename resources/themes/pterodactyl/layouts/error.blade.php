@@ -57,7 +57,7 @@
                 <div class="pull-right hidden-xs small text-gray">
                     <strong>v</strong> {{ config('app.version') }}
                 </div>
-                Copyright &copy; 2015 - {{ date('Y') }} <a href="https://pterodactyl.io/">Pterodactyl Software</a>.
+                <a href="https://www.oyunhost.net/">oyunhost.net</a> &copy; {{ date('Y') }}
             </footer>
         </div>
         @section('footer-scripts')

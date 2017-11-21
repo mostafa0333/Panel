@@ -38,11 +38,11 @@
         <div class="container">
             <div id="login-position-elements">
                 <div class="login-logo">
-                    {{ Settings::get('company', 'Pterodactyl') }}
+                    <img src="https://www.oyunhost.net/ohn-admin-login-logo.png" border="0" title="{{ Settings::get('company', 'Pterodactyl') }} - sunucu paneli">
                 </div>
                 @yield('content')
                 <p class="small login-copyright text-center">
-                    Copyright &copy; 2015 - {{ date('Y') }} <a href="https://pterodactyl.io/" target="_blank">Pterodactyl Software</a>.<br />
+                    <a href="https://www.oyunhost.net/" target="_blank">oyunhost.net</a> &copy; 2017 - {{ date('Y') }}<br />
                 </p>
             </div>
         </div>
