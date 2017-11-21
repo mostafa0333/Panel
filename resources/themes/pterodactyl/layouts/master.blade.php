@@ -207,9 +207,6 @@
             </aside>
             <div class="content-wrapper">
                 <section class="content-header">
-                    @include('partials/_internal/beta')
-                </section>
-                <section class="content-header">
                     @yield('content-header')
                 </section>
                 <section class="content">
