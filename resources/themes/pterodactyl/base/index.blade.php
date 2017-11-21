@@ -38,9 +38,11 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <th>@lang('strings.id')</th>
+                            @if(Auth::user()->isRootAdmin())
+                                <th>@lang('strings.id')</th>
+                                <th>@lang('strings.node')</th>
+                            @endif
                             <th>@lang('strings.name')</th>
-                            <th>@lang('strings.node')</th>
                             <th>@lang('strings.connection')</th>
                             <th class="text-center hidden-sm hidden-xs">@lang('strings.memory')</th>
                             <th class="text-center hidden-sm hidden-xs">@lang('strings.cpu')</th>
@@ -49,9 +51,11 @@
                         </tr>
                         @foreach($servers as $server)
                             <tr class="dynamic-update" data-server="{{ $server->uuidShort }}">
-                                <td @if(! empty($server->description)) rowspan="2" @endif><code>{{ $server->uuidShort }}</code></td>
+                                @if(Auth::user()->isRootAdmin())
+                                    <td @if(! empty($server->description)) rowspan="2" @endif><code>{{ $server->uuidShort }}</code></td>
+                                    <td>{{ $server->node->name }}</td>
+                                @endif
                                 <td><a href="{{ route('server.index', $server->uuidShort) }}">{{ $server->name }}</a></td>
-                                <td>{{ $server->node->name }}</td>
                                 <td><code>{{ $server->allocation->alias }}:{{ $server->allocation->port }}</code></td>
                                 <td class="text-center hidden-sm hidden-xs"><span data-action="memory">--</span> / {{ $server->memory === 0 ? '&infin;' : $server->memory }} MB</td>
                                 <td class="text-center hidden-sm hidden-xs"><span data-action="cpu" data-cpumax="{{ $server->cpu }}">--</span> %</td>
