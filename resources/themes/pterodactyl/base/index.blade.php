@@ -38,7 +38,7 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            @if(Auth::user()->isRootAdmin())
+                            @if(Auth::user()->root_admin)
                                 <th>@lang('strings.id')</th>
                                 <th>@lang('strings.node')</th>
                             @endif
@@ -51,7 +51,7 @@
                         </tr>
                         @foreach($servers as $server)
                             <tr class="dynamic-update" data-server="{{ $server->uuidShort }}">
-                                @if(Auth::user()->isRootAdmin())
+                                @if(Auth::user()->root_admin)
                                     <td @if(! empty($server->description)) rowspan="2" @endif><code>{{ $server->uuidShort }}</code></td>
                                     <td>{{ $server->node->name }}</td>
                                 @endif
