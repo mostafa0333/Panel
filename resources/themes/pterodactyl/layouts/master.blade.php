@@ -213,7 +213,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             @if (count($errors) > 0)
-                                <div class="callout callout-danger">
+                                <div class="alert alert-danger">
                                     @lang('base.validation_error')<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -224,7 +224,7 @@
                             @endif
                             @foreach (Alert::getMessages() as $type => $messages)
                                 @foreach ($messages as $message)
-                                    <div class="callout callout-{{ $type }} alert-dismissable" role="alert">
+                                    <div class="alert alert-{{ $type }} alert-dismissable" role="alert">
                                         {!! $message !!}
                                     </div>
                                 @endforeach
