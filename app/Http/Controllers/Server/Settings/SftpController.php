@@ -19,6 +19,9 @@ class SftpController extends Controller
      */
     public function index(Request $request): View
     {
+        $server = $request->attributes->get('server');
+        $this->authorize('view-sftp', $server);
+
         $this->setRequest($request)->injectJavascript();
 
         return view('server.settings.sftp');

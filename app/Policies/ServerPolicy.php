@@ -16,8 +16,8 @@ use Pterodactyl\Models\Server;
 
 class ServerPolicy
 {
-	private $adminOnlyPerms = array("view-sftp", "view-sftp-password", "reset-sftp", "download-files");
-	
+    private $adminOnlyPerms = array('view-sftp', 'view-sftp-password', 'reset-sftp', 'download-files');
+    
     /**
      * Checks if the user has the given permission on/for the server.
      *
@@ -52,8 +52,8 @@ class ServerPolicy
         } else if(in_array($ability, $this->adminOnlyPerms)) {
             return false;
         } else if($server->owner_id === $user->id) {
-			return true;
-		}
+            return true;
+        }
 
         return $this->checkPermission($user, $server, $ability);
     }
