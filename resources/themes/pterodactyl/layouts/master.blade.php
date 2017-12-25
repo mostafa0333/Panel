@@ -206,11 +206,9 @@
                                         @can('view-allocation', $server)
                                             <li class="{{ Route::currentRouteName() !== 'server.settings.allocation' ?: 'active' }}"><a href="{{ route('server.settings.allocation', $server->uuidShort) }}"><i class="fa fa-handshake-o"></i> @lang('navigation.server.port_allocations')</a></li>
                                         @endcan
-                                        @if(Auth::user()->root_admin)
-                                            @can('view-sftp', $server)
-                                                <li class="{{ Route::currentRouteName() !== 'server.settings.sftp' ?: 'active' }}"><a href="{{ route('server.settings.sftp', $server->uuidShort) }}"><i class="fa fa-upload"></i> @lang('navigation.server.sftp_settings')</a></li>
-                                            @endcan
-                                        @endif
+                                        @can('view-sftp', $server)
+                                            <li class="{{ Route::currentRouteName() !== 'server.settings.sftp' ?: 'active' }}"><a href="{{ route('server.settings.sftp', $server->uuidShort) }}"><i class="fa fa-upload"></i> @lang('navigation.server.sftp_settings')</a></li>
+                                        @endcan
                                         @can('view-startup', $server)
                                             <li class="{{ Route::currentRouteName() !== 'server.settings.startup' ?: 'active' }}"><a href="{{ route('server.settings.startup', $server->uuidShort) }}"><i class="fa fa-play"></i> @lang('navigation.server.startup_parameters')</a></li>
                                         @endcan
