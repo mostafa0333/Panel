@@ -17,6 +17,8 @@ return [
         'file_browser' => 'File Browser',
         'create_file' => 'Create File',
         'upload_files' => 'Upload Files',
+        'admin_management' => 'Admin Management',
+        'plugin_management' => 'Plugin Management',
         'subusers' => 'Subusers',
         'schedules' => 'Schedules',
         'configuration' => 'Configuration',

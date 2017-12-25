@@ -17,6 +17,8 @@ return [
         'file_browser' => 'Dosyalar',
         'create_file' => 'Dosya Oluştur',
         'upload_files' => 'Dosya Yükle',
+        'admin_management' => 'Yetkili Yönetimi',
+        'plugin_management' => 'Eklenti Yönetimi',
         'subusers' => 'Alt Kullanıcılar',
         'schedules' => 'Zamanlı Görevler',
         'configuration' => 'Ayarlar',

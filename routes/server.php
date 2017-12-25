@@ -101,3 +101,37 @@ Route::group(['prefix' => 'schedules'], function () {
         Route::delete('/view/{schedule}', 'Tasks\TaskManagementController@delete');
     });
 });
+
+/*
+|--------------------------------------------------------------------------
+| Server Plugin Controller Routes
+|--------------------------------------------------------------------------
+|
+| Endpoint: /server/{server}/plugins
+|
+*/
+Route::group(['prefix' => 'plugins'], function () {
+    Route::get('/', 'PluginController@index')->name('server.plugins');
+    Route::patch('/', 'PluginController@update');
+    Route::get('/config', 'PluginController@config')->name('server.plugins.config');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Server Admin Controller Routes
+|--------------------------------------------------------------------------
+|
+| Endpoint: /server/{server}/admins
+|
+*/
+Route::group(['prefix' => 'admins'], function () {
+    Route::get('/', 'AdminController@index')->name('server.admins');
+    Route::get('/new', 'AdminController@create')->name('server.admins.new');
+    Route::post('/new', 'AdminController@store');
+
+    Route::group(['middleware' => 'server..admin'], function () {
+        Route::get('/view/{admin}', 'AdminController@view')->name('server.admins.view');
+        Route::patch('/view/{admin}', 'AdminController@update');
+        Route::delete('/view/{admin}', 'AdminController@delete');
+    });
+});

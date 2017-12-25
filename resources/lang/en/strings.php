@@ -88,4 +88,10 @@ return [
     'logout_confirm_title' => 'Do you want to log out?',
     'logout_confirm_button' => 'Log out',
     'create_new' => 'Create New',
+    'plugin' => 'Plugin',
+	'description' => 'Description',
+	'steamid' => 'Steam ID',
+	'permissions' => 'Permissions',
+	'immunity' => 'Immunity',
+	'notes' => 'Notes',
 ];

@@ -20,6 +20,7 @@
 @endsection
 
 @section('content')
+@if(Auth::user()->root_admin)
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
@@ -46,6 +47,7 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
 
 @section('footer-scripts')

@@ -294,4 +294,28 @@ return [
             'help_text' => 'The list to the left includes all available IPs and ports that are open for your server to use for incoming connections.',
         ],
     ],
+    'plugins' => [
+        'header' => 'Plugin Management',
+        'header_sub' => 'Add/remove and configure your plugins.',
+        'load_plugin' => 'Install',
+        'unload_plugin' => 'Remove',
+        'configure' => 'Settings',
+        'list' => 'Plugin List',
+        'unload' => [
+            'title' => 'Remove Plugin',
+            'text' => 'All the plugin files and the configuration will be removed from the server. You will have to configure it from scratch, if you enable the plugin again later.',
+            'success' => 'Plugin was successfully removed.',
+        ],
+        'load' => [
+            'title' => 'Install Plugin',
+            'text' => 'Are you sure you want to install the plugin?',
+            'success' => 'Plugin was successfully installed.',
+        ],
+        'config' => [
+            'header' => 'Plugin Configuration',
+            'header_sub' => 'Configure your plugins easily.',
+            'save' => 'Save',
+            'return' => 'Return to Plugin Management',
+        ],
+    ],
 ];

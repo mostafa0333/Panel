@@ -294,4 +294,33 @@ return [
             'help_text' => 'Soldaki listede, sunucunuza tanımlanmış, bağlantı için kullanılabilecek IP ve Port bilgileri bulunmaktadır.',
         ],
     ],
+    'plugins' => [
+        'header' => 'Eklenti Yönetimi',
+        'header_sub' => 'Sunucunuza eklenti ekleyip ayarlarını yapın.',
+        'load_plugin' => 'Kur',
+        'unload_plugin' => 'Kaldır',
+        'configure' => 'Ayarlar',
+        'list' => 'Eklenti Listesi',
+        'unload' => [
+            'title' => 'Eklenti Kaldır',
+            'text' => 'Bu işlem, eklenti dosyalarını ve ayarlarını sunucudan silecektir. Eklentiyi tekrar kurduğunuzda ayarları sıfırdan yapmanız gerekecektir.',
+            'success' => 'Eklenti başarıyla kaldırıldı.',
+        ],
+        'load' => [
+            'title' => 'Eklenti Kur',
+            'text' => 'Sunucunuza eklenti kurmaya emin misiniz?',
+            'success' => 'Eklenti başarıyla kuruldu.',
+        ],
+        'config' => [
+            'header' => 'Eklenti Ayarları',
+            'header_sub' => 'Ayarlarınızı kolayca uygulayın.',
+            'save' => 'Kaydet',
+            'return' => 'Eklenti Yönetimine Geri Dön',
+        ],
+    ],
+    'admins' => [
+        'header' => 'Yetkili Yönetimi',
+        'header_sub' => 'Sunucunuzdaki yetkilileri yönetin.',
+        'list' => 'Yetkili Listesi',
+    ],
 ];

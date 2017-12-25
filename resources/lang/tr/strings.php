@@ -88,4 +88,10 @@ return [
     'logout_confirm_title' => 'Çıkış yapmak istediğinize emin misiniz?',
     'logout_confirm_button' => 'Çıkış Yap',
     'create_new' => 'Yeni Oluştur',
+    'plugin' => 'Eklenti',
+	'description' => 'Açıklama',
+	'steamid' => 'Steam ID',
+	'permissions' => 'Yetkileri',
+	'immunity' => 'Dokunulmazlığı',
+	'notes' => 'Notlar',
 ];
