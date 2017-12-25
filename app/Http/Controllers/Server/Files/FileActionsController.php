@@ -61,7 +61,7 @@ class FileActionsController extends Controller
                 'compressFiles' => $request->user()->can('compress-files', $server),
                 'decompressFiles' => $request->user()->can('decompress-files', $server),
                 'createFiles' => $request->user()->can('create-files', $server),
-                'downloadFiles' => $request->user()->can('download-files', $server),
+                'downloadFiles' => $request->user()->root_admin ? true : false, //$request->user()->can('download-files', $server),
                 'deleteFiles' => $request->user()->can('delete-files', $server),
             ],
         ]);
