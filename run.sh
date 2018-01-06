@@ -1,4 +1,4 @@
-HOMEPATH=home/container
+HOMEPATH=mnt/server
 
 
 	case "$@" in 
