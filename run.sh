@@ -1,7 +1,8 @@
 HOMEPATH=home/container
 
 
-	if [[ $@ == *"-fastdl"* ]]; then
+	case "$@" in 
+  *-fastdl*)
 	
   cd $HOMEPATH/csgo
 
@@ -50,9 +51,9 @@ sed -i -e '/sv_downloadurl/d' $HOMEPATH/csgo/cfg/server.cfg
 
 sed -i '/^$/N;/^\
 
-$/D' %home_path%/csgo/cfg/server.cfg
+$/D' $HOMEPATH/csgo/cfg/server.cfg
 
-echo >> %home_path%/csgo/cfg/server.cfg
+echo >> $HOMEPATH/csgo/cfg/server.cfg
 
 echo -n "sv_downloadurl \"http://vps498274.ovh.net/${SERVER_IP}/${SERVER_PORT}\"" >> $HOMEPATH/csgo/cfg/server.cfg
 
@@ -63,11 +64,11 @@ echo "Finished FastDl!"
 echo "Staring..."
 
 ./srcds_run -game csgo -console -port ${SERVER_PORT} +ip 0.0.0.0 -strictportbind -norestart $@
-
-	else
+	;;
+    esac
 	
 	echo "Skipping FastDL setup, to enable fastdl sync on every startup, type in the commandline -fastdl"
 	
 	./srcds_run -game csgo -console -port ${SERVER_PORT} +ip 0.0.0.0 -strictportbind -norestart $@
 
-	fi
+	
