@@ -1,5 +1,10 @@
 HOMEPATH=mnt/server
 
+apt-get -y install sshpass
+apt-get -y install wget
+apt-get -y install ssh
+apt-get -y install rsync
+apt-get -y install bzip2
 
 	case "$@" in 
   *-fastdl*)
