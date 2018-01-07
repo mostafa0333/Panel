@@ -1,4 +1,4 @@
-HOMEPATH=mnt/server
+HOMEPATH=home/container
 
 apt-get -y install sshpass
 apt-get -y install wget
